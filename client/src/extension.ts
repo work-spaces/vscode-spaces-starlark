@@ -9,7 +9,6 @@ import {
   LanguageClient,
   LanguageClientOptions,
   ServerOptions,
-  TransportKind,
 } from "vscode-languageclient/node";
 
 let client: LanguageClient;
@@ -21,12 +20,10 @@ export function activate(_context: ExtensionContext) {
     run: {
       command: "spaces",
       args: ["run-lsp"],
-      transport: TransportKind.stdio,
     },
     debug: {
       command: "spaces",
       args: ["run-lsp"],
-      transport: TransportKind.stdio,
     },
   };
 
