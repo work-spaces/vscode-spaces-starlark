@@ -23,7 +23,15 @@ run_add_exec(
 )
 
 run_add_exec(
-    "create_package",
+    "compile",
+    command = "npm",
+    args = ["exec", "@vscode/vsce", "package"],
+    deps = ["npm_run_compile"],
+    visibility = visibility_private()
+)
+
+run_add_exec(
+    "publish",
     command = "npm",
     args = ["exec", "@vscode/vsce", "package"],
     deps = ["npm_run_compile"],
