@@ -12,5 +12,5 @@ spaces checkout-repo --url=https://github.com/work-spaces/vscode-spaces-starlark
     --rev=main \
     --name=vscode-spaces-starlark-workspace
 cd vscode-spaces-starlark-workspace
-spaces run //vscode-spaces-starlark:create_package
+spaces run //vscode-spaces-starlark:compile
 ```

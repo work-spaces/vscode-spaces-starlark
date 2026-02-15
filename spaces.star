@@ -24,10 +24,17 @@ run_add_exec(
 )
 
 run_add_exec(
+    "npm_install_language_client",
+    command = "npm",
+    args = ["install", "@vscode/vsce", "vscode-languageclient"],
+    deps = ["npm_install_client"],
+)
+
+run_add_exec(
     "npm_run_compile",
     command = "npm",
-    args = ["install", "npm_install_client"],
-    deps = ["npm_install"],
+    args = ["install"],
+    deps = ["npm_install", "npm_install_language_client"],
     visibility = visibility_private(),
     working_directory = ".",
 )
@@ -41,11 +48,3 @@ run_add_exec(
     working_directory = ".",
 )
 
-run_add_exec(
-    "publish",
-    command = "npm",
-    args = ["exec", "@vscode/vsce", "package"],
-    deps = ["npm_run_compile"],
-    visibility = visibility_private(),
-    working_directory = ".",
-)

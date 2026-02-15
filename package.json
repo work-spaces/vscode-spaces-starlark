@@ -31,7 +31,7 @@
         ],
         "extensions": [
           ".star",
-          ".sky"
+          ".spaces.star"
         ],
         "configuration": "./syntaxes/starlark.configuration.json"
       }
